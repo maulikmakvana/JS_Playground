@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #7f00ff, #3f2b96);
+  overflow: hidden;
+}
+
+/* Floating background glow */
+body::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+  top: -100px;
+  left: -100px;
+  filter: blur(40px);
+}
+
+.quiz-container {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  animation: popIn 0.8s ease;
+  color: #fff;
+  position: relative;
+}
+
+/* Timer */
+#timer {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffd166;
+  margin-bottom: 5px;
+}
+
+/* Question index */
+#index {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+/* Question */
+#question {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+/* Options */
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 14px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid transparent;
+  transition: all 0.35s ease;
+}
+
+label:hover {
+  transform: translateY(-4px) scale(1.01);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+input[type="radio"] {
+  accent-color: #ffd166;
+  transform: scale(1.2);
+}
+
+label span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Next button */
+.next-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  color: #222;
+  background: linear-gradient(135deg, #ffd166, #fcbf49);
+  box-shadow: 0 12px 35px rgba(255, 209, 102, 0.5);
+  transition: all 0.35s ease;
+}
+
+.next-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(255, 209, 102, 0.7);
+}
+
+/* Animations */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .quiz-container {
+    padding: 22px;
+  }
+
+  #question {
+    font-size: 19px;
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+   <div class="quiz-container">
+        <p id="timer">00:60</p>
+        <h3 id="number">01</h3>
+        <h3 id="question">hello hello hello hello ?</h3>
+
+        <ul>
+            <li>
+                <label>
+                    <input type="radio" name="answer">
+                    <span> demo </span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" name="answer">
+                    <span> hi </span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" name="answer">
+                    <span>hello</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" name="answer">
+                    <span> hi </span>
+                </label>
+            </li>
+        </ul>
+
+        <button id="nextBtn" class="next-btn">Next</button>
+    </div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
