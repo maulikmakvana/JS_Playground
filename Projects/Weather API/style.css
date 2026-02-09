@@ -1,4 +1,4 @@
-/* body{
+body{
     font-family: Arial;
     background: linear-gradient(135deg, #74ebd5, #4facfe);
     text-align: center;
@@ -57,4 +57,5 @@
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
-    } */
+
+    }
