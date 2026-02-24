@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- header  -->
+        <header class="header">
+    <div class="logo">MyBlog Admin</div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="addBlog.html">Add Blog</a></li>
+            <li><a href="admin.html">Edit Blogs</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Add New Blog</h1>
+
+<form id="blogForm">
+    <input type="text" id="title" placeholder="Blog Title" required>
+
+    <textarea id="content" placeholder="Blog Content" required></textarea>
+
+    <input type="file" id="image" accept="image/*" required>
+
+    <select id="rating" required>
+        <option value="">Select Rating</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Star</option>
+        <option value="3">3 Star</option>
+        <option value="4">4 Star</option>
+        <option value="5">5 Star</option>
+    </select>
+
+    <button type="submit">Save Blog</button>
+</form>
+
+
+<script src="script/addBlog.js"></script>
+</body>
+</html>
